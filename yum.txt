@@ -1,0 +1,16 @@
+mkdir /mnt/cdrom
+mount /dev/cdrom /mnt/cdrom
+df -hT
+vi /etc/yum.repos.d/server.repo
+
+
+[server]
+name=relhat7
+baseurl=file:///mnt/cdrom
+enabled=1
+gpgcheck=0
+
+yum list
+yum list telnet-server
+yum install telnet-server
+rpm -qa telnet-server
